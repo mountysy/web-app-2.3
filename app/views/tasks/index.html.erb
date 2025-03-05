@@ -1,0 +1,23 @@
+<h1> To do list </h1>
+
+<% if session != nil  %>
+
+  <ul>
+    <% for task in @tasks %>
+      <li> 
+        <%= task["description"] %>
+      </li>
+    <%end%>
+  </ul>
+
+
+  <form action ="/tasks" method = "post">
+    <input type ="text" name ="description">
+    <button>Add task</button>
+  </form>
+
+<%else%>
+
+  <% flash["notice"] = "please login to create tasks" %>
+
+<%end%>

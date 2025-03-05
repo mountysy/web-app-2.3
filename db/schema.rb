@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_05_212529) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_05_230334) do
   create_table "activities", force: :cascade do |t|
     t.string "note"
     t.string "activity_type"
@@ -42,6 +42,13 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_05_212529) do
     t.string "author"
     t.string "body"
     t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "description"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
