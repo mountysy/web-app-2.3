@@ -1,0 +1,19 @@
+<h1> New Activity for <%=@contact["first_name"]%> </h1>
+
+<form action ="/activities" method ="post">
+  <p>
+  <label for = "note">Note: </label>
+  <input type = "text" name ="note" id ="note" >
+  </p>
+  <p>
+  <label for = "activity_type">Activity Type: </label>
+  <input type = "text" name ="activity_type" id ="activity_type" >
+  </p>
+
+  <input type = "hidden" name ="contact_id"  value = <%=params["contact_id"] %> >
+  <input type = "hidden" name ="company_id"  value = <%=params["company_id"] %> >
+
+  <button>Submit</button>
+  <a href ="/contacts/<%=@contact["id"]%>"> Cancel </a>
+</form>
+

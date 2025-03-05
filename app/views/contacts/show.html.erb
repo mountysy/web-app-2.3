@@ -8,3 +8,20 @@
 </ul>
 
 <p><a href="/companies/<%= @company["id"] %>">Back to <%= @company["name"] %></a></p>
+
+<h2> Activities: </h2>
+
+<ul>
+  <% for activity in @activities %>
+    <li>
+      <p> 
+      Note: <%=activity["note"] %>
+      </p>
+      <p> 
+      Activity type: <%=activity["activity_type"] %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+<a href ="/activities/new?contact_id=<%=@contact["id"]%>&company_id=<%=@company["id"]%>"> New Activity </a>

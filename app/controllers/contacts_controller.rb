@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find_by({"id" => params["id"]})
     @company = Company.find_by({"id" => @contact["company_id"]})
+    @activities = Activity.where({"contact_id" => @contact["id"], "company_id" => @company["id"]})
     # render contacts/show view with details about Contact
   end
 
