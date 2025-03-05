@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   resources "contacts"
   # get("/contacts", {:controller => "contacts", :action => "index"})
 
+  resources "users"
+  resources "sessions"
+
+  get("/login", {:controller => "sessions", :action => "new"})
+  get("/logout", {:controller => "sessions", :action => "destroy"})
+  
   resources "posts"
   # get("/posts", {:controller => "posts", :action => "index"})
 end
